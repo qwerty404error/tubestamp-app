@@ -3,19 +3,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: #f0f4f8;
+  height: 100vh; /* Full viewport height */
+  background-color: #f0f4f8; /* Light background */
   font-family: 'Arial', sans-serif;
   color: #333;
+  padding: 20px; /* Add padding for better spacing */
 }
 
 .landing-title {
-  font-size: 2.5rem;
+  font-size: 3.5rem; /* Increase font size */
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* Add more spacing below the title */
 }
 
 .landing-description {
-  font-size: 1.2rem;
+  font-size: 1.5rem; /* Increase font size */
   color: #555;
+  margin-bottom: 2rem; /* Add spacing below the description */
+}
+
+.timestamp,
+.bumpups,
+.footer {
+  margin-top: 1rem; /* Add spacing between components */
 }

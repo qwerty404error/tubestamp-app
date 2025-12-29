@@ -1,0 +1,10 @@
+.bumpups {
+  background-color: #e0e0e0;
+  padding: 20px;
+  text-align: center;
+}
+
+.bumpups p {
+  font-size: 1rem;
+  color: #333;
+}
