@@ -1,10 +1,64 @@
 .bumpups {
-  background-color: #e0e0e0;
-  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 40px;
   text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.bumpups h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .bumpups p {
-  font-size: 1rem;
-  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+
+.bumpups-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.option {
+  background-color: #444;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.option:hover {
+  transform: scale(1.05);
+  background-color: #555;
+}
+
+.option i {
+  font-size: 2.5rem;
+  color: #61dafb;
+  margin-bottom: 10px;
+}
+
+.option h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.learn-more {
+  font-size: 0.9rem;
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.learn-more i {
+  margin-left: 5px;
+}
+
+.learn-more:hover {
+  text-decoration: underline;
 }

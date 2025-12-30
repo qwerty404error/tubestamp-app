@@ -1,5 +1,7 @@
 import React from 'react';
 import LandingPage from './unAuth/components/LandingPage';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 function App() {
   return (

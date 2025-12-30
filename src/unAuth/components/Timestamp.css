@@ -1,73 +1,107 @@
+/* Main container */
 .timestamp {
-  background-color: #333; /* Dark background */
-  padding: 20px;
-  text-align: center;
-  border-radius: 8px; /* Rounded corners for the container */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
-  color: #fff; /* White text */
-}
-
-.timestamp-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 12px;
-}
-
-.timestamp-description {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  color: #ccc; /* Light gray text */
-}
-
-.timestamp-link {
-  color: #007bff; /* Blue link color */
-  text-decoration: none;
-}
-
-.timestamp-link:hover {
-  text-decoration: underline;
-}
-
-.timestamp-form {
-  display: flex;
-  align-items: center;
-  gap: 12px; /* Add spacing between input and button */
-  justify-content: center; /* Center the form elements */
-}
-
-.timestamp-input {
-  width: 100%;
-  max-width: 400px; /* Limit the input field width */
-  padding: 10px 12px;
-  font-size: 1rem;
-  border: 1px solid #555; /* Dark border */
-  border-radius: 4px;
-  box-sizing: border-box;
-  outline: none;
-  background-color: #222; /* Dark input background */
-  color: #fff; /* White text */
-  transition: border-color 0.3s;
-}
-
-.timestamp-input::placeholder {
-  color: #aaa; /* Light gray placeholder text */
-}
-
-.timestamp-input:focus {
-  border-color: #007bff; /* Highlight border on focus */
-}
-
-.timestamp-submit {
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.timestamp-submit:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-}
+    background-color: #1a1a1a;
+    padding: 24px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+  
+    /* Center + max width */
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  /* Title */
+  .timestamp-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  
+  /* Description text */
+  .timestamp-description {
+    font-size: 1rem;
+    margin-bottom: 24px;
+    color: #ccc;
+  }
+  
+  /* Link inside description */
+  .timestamp-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .timestamp-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Form container */
+  .timestamp-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+  
+  /* Input wrapper (icon + input) */
+  .timestamp-input-container {
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 10px 12px;
+    flex: 1; /* TAKE ALL AVAILABLE WIDTH */
+  }
+  
+  /* Link icon */
+  .timestamp-input-icon {
+    margin-right: 8px;
+    color: #aaa;
+    font-size: 1rem;
+  }
+  
+  /* Input field */
+  .timestamp-input {
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  /* Placeholder text */
+  .timestamp-input::placeholder {
+    color: #aaa;
+  }
+  
+  /* Submit button */
+  .timestamp-submit {
+    padding: 10px 24px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent shrinking */
+    transition: background-color 0.3s ease;
+  }
+  
+  .timestamp-submit:hover {
+    background-color: #0056b3;
+  }
+  
+  /* ✅ Responsive (mobile-friendly) */
+  @media (max-width: 600px) {
+    .timestamp-form {
+      flex-direction: column;
+    }
+  
+    .timestamp-submit {
+      width: 100%;
+    }
+  }
+  
