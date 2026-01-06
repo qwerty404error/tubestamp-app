@@ -4,23 +4,67 @@ import './Timestamp.css';
 const Timestamp = () => {
   const [url, setUrl] = useState('');
   const [error, setError] = useState('');
+  const [videoData, setVideoData] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
   // YouTube URL regex
   const youtubeRegex =
     /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/)|youtu\.be\/)[a-zA-Z0-9_-]{11}(\S+)?$/;
 
-  const handleSubmit = (e) => {
+  // Extract video ID from URL
+  const getVideoId = (url) => {
+    const match = url.match(
+      /(?:youtube\.com\/.*v=|youtu\.be\/)([^&\n?#]+)/
+    );
+    return match ? match[1] : null;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
+    setVideoData(null);
 
     if (!youtubeRegex.test(url)) {
       setError('Please enter a valid YouTube URL');
       return;
     }
 
-    setError('');
-    console.log('Valid YouTube URL:', url);
+    const videoId = getVideoId(url);
+    if (!videoId) {
+      setError('Unable to extract video ID');
+      return;
+    }
 
-    // 👉 Call API / generate timestamps here
+    try {
+      setLoading(true);
+
+      const response = await fetch(
+        `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${API_KEY}`
+      );
+
+      const data = await response.json();
+
+      if (!data.items || data.items.length === 0) {
+        setError('Video not found');
+        return;
+      }
+
+      const snippet = data.items[0].snippet;
+
+      setVideoData({
+        title: snippet.title,
+        thumbnail:
+          snippet.thumbnails.maxres?.url ||
+          snippet.thumbnails.high?.url ||
+          snippet.thumbnails.medium?.url,
+      });
+    } catch (err) {
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -29,8 +73,7 @@ const Timestamp = () => {
 
       <p className="timestamp-description">
         Generates timestamps for a given YouTube video using the bump-1.0 model.
-        This software was built using the AI. Watch tutorials –{' '}
-        <a href="#tutorials" className="timestamp-link">here</a>.
+        This software was built using AI.
       </p>
 
       <form className="timestamp-form" onSubmit={handleSubmit}>
@@ -46,12 +89,24 @@ const Timestamp = () => {
         </div>
 
         <button type="submit" className="timestamp-submit">
-          Generate Timestamps
+          {loading ? 'Loading...' : 'Generate Timestamps'}
         </button>
       </form>
 
       {/* Error message */}
-      {error && <p style={{ color: '#ff6b6b', marginTop: '12px' }}>{error}</p>}
+      {error && <p className="timestamp-error">{error}</p>}
+
+      {/* Video Preview */}
+      {videoData && (
+        <div className="video-preview">
+          <img
+            src={videoData.thumbnail}
+            alt="Video Thumbnail"
+            className="video-thumbnail"
+          />
+          <h3 className="video-title">{videoData.title}</h3>
+        </div>
+      )}
     </div>
   );
 };
