@@ -1,0 +1,113 @@
+/* Main container */
+.timestamp {
+  background-color: #1a1a1a;
+  padding: 32px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  max-width: 900px;
+  margin: 100px auto 40px;
+}
+
+/* Title */
+.timestamp-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* Description */
+.timestamp-description {
+  font-size: 1rem;
+  margin-bottom: 24px;
+  color: #ccc;
+}
+
+/* Form */
+.timestamp-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Input container */
+.timestamp-input-container {
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 12px;
+  flex: 1;
+}
+
+/* Icon */
+.timestamp-input-icon {
+  margin-right: 8px;
+  color: #aaa;
+}
+
+/* Input */
+.timestamp-input {
+  width: 100%;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+}
+
+/* Button */
+.timestamp-submit {
+  padding: 12px 26px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.timestamp-submit:hover {
+  background-color: #0056b3;
+}
+
+/* Error */
+.timestamp-error {
+  margin-top: 14px;
+  color: #ff6b6b;
+}
+
+/* Video Preview */
+.video-preview {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.video-thumbnail {
+  width: 100%;
+  max-width: 640px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.video-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .timestamp-form {
+    flex-direction: column;
+  }
+
+  .timestamp-submit {
+    width: 100%;
+  }
+}

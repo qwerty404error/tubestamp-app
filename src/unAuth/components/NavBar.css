@@ -1,0 +1,168 @@
+/* ========================= */
+/* Base (Desktop default) */
+/* ========================= */
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 48px;
+  background-color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Brand */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.navbar-logo {
+  height: 32px;
+  width: auto;
+}
+
+.navbar-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f0f4f8;
+  white-space: nowrap;
+}
+
+.navbar-title-highlight {
+  color: #61dafb;
+}
+
+/* Right section */
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+/* CTA Button */
+.quote-button {
+  background-color: #61dafb;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 22px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.quote-button:hover {
+  background-color: #4fa3d9;
+  transform: translateY(-1px);
+}
+
+.arrow {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* ========================= */
+/* 💻 Large Desktop */
+/* ========================= */
+
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 18px 64px;
+  }
+
+  .navbar-title {
+    font-size: 1.75rem;
+  }
+
+  .quote-button {
+    font-size: 1.05rem;
+    padding: 12px 26px;
+  }
+}
+
+/* ========================= */
+/* 📱 Tablet */
+/* ========================= */
+
+@media (max-width: 1023px) {
+  .navbar {
+    padding: 14px 28px;
+  }
+
+  .navbar-logo {
+    height: 28px;
+  }
+
+  .navbar-title {
+    font-size: 1.35rem;
+  }
+
+  .quote-button {
+    font-size: 0.95rem;
+    padding: 8px 18px;
+  }
+
+  .arrow {
+    font-size: 1.05rem;
+  }
+}
+
+/* ========================= */
+/* 📱 Mobile */
+/* ========================= */
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 12px 18px;
+  }
+
+  .navbar-logo {
+    height: 26px;
+  }
+
+  .navbar-title {
+    font-size: 1.2rem;
+  }
+
+  .quote-button {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    border-radius: 18px;
+  }
+
+  .arrow {
+    font-size: 0.95rem;
+  }
+}
+
+/* ========================= */
+/* 📱 Extra Small Mobile */
+/* ========================= */
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 14px;
+  }
+
+  .navbar-title {
+    font-size: 1.1rem;
+  }
+
+  .quote-button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
